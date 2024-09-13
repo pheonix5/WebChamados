@@ -18,7 +18,6 @@ import Modal from "../../components/Modal";
 const listRef = collection(db, "chamados");
 
 export default function Dashboard() {
-  const { logout } = useContext(AuthContext);
 
   const [chamados, setChamados] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,7 +70,7 @@ export default function Dashboard() {
       const lastDocs = querySnapshot.docs[querySnapshot.docs.length - 1]
       setChamados(chamados => [...chamados, ...lista])
       setLetDocs(lastDocs);
-      
+
     } else {
       setIsEmpty(true)
     }
@@ -79,7 +78,7 @@ export default function Dashboard() {
     setLoadingMore(false);
   }
 
-  async function handleMore(){
+  async function handleMore() {
     setLoadingMore(true)
 
     const q = query(listRef, orderBy('created', 'asc'), startAfter(lastDocs), limit(5));
@@ -89,21 +88,21 @@ export default function Dashboard() {
 
   }
 
-  function toggleModal(item){
+  function toggleModal(item) {
     setShowPostModal(!showPostModal),
-    setDetail(item);
+      setDetail(item);
   }
 
-  if(loading){
-    return(
+  if (loading) {
+    return (
       <div>
-        <Header/>
+        <Header />
 
         <div className="content">
           <Title name="Tickets">
-            <FiMessageSquare size={25}/>
+            <FiMessageSquare size={25} color="#cbd5e1" />
           </Title>
-          
+
 
           <div className="container dashboard">
             <span>Buscando Chamados...</span>
@@ -119,7 +118,7 @@ export default function Dashboard() {
 
       <div className="content">
         <Title name="Tickets">
-          <FiMessageSquare size={25} />
+          <FiMessageSquare size={25} color="#cbd5e1" />
         </Title>
 
         <>
@@ -157,7 +156,7 @@ export default function Dashboard() {
                         <td data-label="Cliente">{item.cliente}</td>
                         <td data-label="Assunto">{item.assunto}</td>
                         <td data-label="Status">
-                          <span className="badge" style={{backgroundColor: item.status === "Aberto" ? '#5cb85c' : '#999' }}>
+                          <span className="badge" style={{ backgroundColor: item.status === "Aberto" ? '#5cb85c' : '#999' }}>
                             {item.status}
                           </span>
                         </td>
@@ -185,12 +184,14 @@ export default function Dashboard() {
       </div>
 
       {showPostModal && (
-        <Modal 
+        <Modal
           conteudo={detail}
-          close={( ) => setShowPostModal(!showPostModal)}
+          close={() => setShowPostModal(!showPostModal)}
         />
       )}
 
     </div>
   );
 }
+
+

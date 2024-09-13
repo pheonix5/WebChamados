@@ -31,7 +31,7 @@
 }
 
 table{
-  border: 1px solid #CCC;
+  border: 1px solid #1f2937;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -45,8 +45,8 @@ table caption{
 }
 
 table tr{
-  background-color: #f8f8f8;
-  border: 1px solid #DDD;
+  background-color: #f1f5f9;
+  border: 1px solid #9ca3af;
   padding: 0.35em;
 }
 
@@ -59,6 +59,7 @@ table th{
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #020617;
 }
 
 table td .action{
@@ -76,7 +77,7 @@ table td .action svg{
 table td .badge{
   padding: 3px;
   border-radius: 3px;
-  color: #FFF;
+  color: #e2e8f0;
 }
 
 .dashboard span{
@@ -88,11 +89,18 @@ table td .badge{
 .btn-more{
   margin: 1.5em 0 ;
   padding: 0.5em 1em;
-  background-color: #181c2e;
+  background-color: #1e293b;
   border: 0;
   border-radius: 5px;
   font-size: 1.1em;
-  color: #FFF;
+  color: #cbd5e1;
+  transition: all 0.3s;
+}
+
+.btn-more:hover{
+  background-color: #e2e8f0;
+  transform: scale(1.1);
+  color: #1e293b;
 }
 
 @media screen and (max-width: 600px){

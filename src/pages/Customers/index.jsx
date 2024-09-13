@@ -44,7 +44,7 @@ export default function Customers() {
 
       <div className="content">
         <Title name="Clientes">
-          <FiUser size={25} />
+          <FiUser size={25} color='#cbd5e1'/>
         </Title>
 
         <div className="container">

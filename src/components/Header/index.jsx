@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 import avatarImg from '../../assets/avatar.png';
 
 import { AuthContext } from '../../contexts/auth'
-import { FiHome, FiUser, FiSettings, FiMenu } from 'react-icons/fi'
+import { FiHome, FiUser, FiSettings, FiMenu, FiLogOut } from 'react-icons/fi'
 import { GrFormClose } from "react-icons/gr";
 import './header.css'
 
 
+
 export default function Header() {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [openToggle, setOpenToggle] = useState(true)
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
 
@@ -79,6 +80,10 @@ export default function Header() {
       <Link to="/profile">
         <FiSettings color='#FFF' size={24} />
         Perfil
+      </Link>
+      <Link onClick={logout}>
+        <FiLogOut color='#FFF' size={24} />
+        Sair
       </Link>
     </div>
   );

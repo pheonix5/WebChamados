@@ -3,9 +3,14 @@ import './modal.css'
 import { FiX } from 'react-icons/fi'
 
 export default function Modal({ conteudo, close }) {
+
+    function handleContainerClick(event) {
+      event.stopPropagation();
+    }
+
   return (
-    <div className='modal'>
-      <div className='container'>
+    <div className='modal' onClick={close}>
+      <div className='container' onClick={handleContainerClick}>
         <button className='close' onClick={close}>
           <FiX size={25} color='#FFF' />
           Voltar

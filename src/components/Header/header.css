@@ -3,10 +3,11 @@
   width: 200px;
   margin: 0;
   padding: 0;
-  background-color: #181c2e;
+  background-color: #0f172a;
   position: fixed;
   height: 100%;
   overflow: auto;
+  border-right: 1px solid #475569;
 }
 
 .sidebar div{
@@ -38,7 +39,7 @@
   padding: 16px;
   display: flex;
   text-align: none;
-  color: rgba(255,255, 255, 0.7);
+  color: #94a3b8;
   flex-direction: row;
   align-items: center;
   transition: ease-in-out 0.4s;
@@ -49,8 +50,15 @@
 }
 
 .sidebar a:hover{
-  background-color: #121212;
+  background-color: #475569;
   color: #FFF;
+}
+
+.sidebar a:last-child{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .content{

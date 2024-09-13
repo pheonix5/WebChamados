@@ -11,6 +11,7 @@ export default function SignUp(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
   async function handleSubmit(e){
     e.preventDefault();
 
@@ -42,7 +43,7 @@ export default function SignUp(){
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <input 
+          <input  
             type="password" 
             placeholder='******'
             value={password}
